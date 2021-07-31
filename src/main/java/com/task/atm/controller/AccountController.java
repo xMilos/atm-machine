@@ -19,7 +19,7 @@ import static com.task.atm.util.StringLiterals.*;
  */
 @Slf4j
 @RestController
-@RequestMapping("/api/account")
+@RequestMapping("/api/v1/account")
 @Api(tags = "Account endpoints")
 public class AccountController {
 
@@ -36,6 +36,7 @@ public class AccountController {
     @PostMapping("/balance")
     @ApiOperation(value = "Check balance")
     public ResponseEntity<String> checkBalance(@RequestParam String accountNumber, @RequestParam int pin) {
+        log.info(BALANCE_CHECK.getMessage());
         try {
             String response = accountService.checkBalance(accountNumber, pin);
             log.info(BALANCE_RETRIEVED.getMessage());
@@ -48,8 +49,8 @@ public class AccountController {
     /**
      * Withdraw response entity.
      *
-     * @param accountNumber   the account number
-     * @param pin             the pin
+     * @param accountNumber  the account number
+     * @param pin            the pin
      * @param withDrawAmount the with drawn amount
      * @return the response entity
      */
@@ -62,7 +63,7 @@ public class AccountController {
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (ForbiddenException ex) {
             return new ResponseEntity<>(ex.getErrorCode() + ":" + ex.getErrorMessage(), HttpStatus.FORBIDDEN);
-        } catch (BadRequestException ex){
+        } catch (BadRequestException ex) {
             return new ResponseEntity<>(ex.getErrorCode() + ":" + ex.getErrorMessage(), HttpStatus.BAD_REQUEST);
         }
     }
@@ -80,7 +81,7 @@ public class AccountController {
             accountService.createAccount(account);
             log.info(ACCOUNT_CREATED.getMessage());
             return new ResponseEntity<>(ACCOUNT_CREATED.getMessage(), HttpStatus.CREATED);
-        } catch (BadRequestException ex){
+        } catch (BadRequestException ex) {
             return new ResponseEntity<>(ex.getErrorCode() + ":" + ex.getErrorMessage(), HttpStatus.BAD_REQUEST);
         }
     }
@@ -97,8 +98,8 @@ public class AccountController {
         try {
             accountService.deleteAccount(accountNumber);
             log.info("Account deleted");
-            return ResponseEntity.ok("Account "+accountNumber+" deleted");
-        } catch (BadRequestException ex){
+            return ResponseEntity.ok("Account " + accountNumber + " deleted");
+        } catch (BadRequestException ex) {
             return new ResponseEntity<>(ex.getErrorCode() + ":" + ex.getErrorMessage(), HttpStatus.BAD_REQUEST);
         }
     }

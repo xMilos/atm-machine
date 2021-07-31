@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<testcontainers.version>1.15.3</testcontainers.version>
-		<io.springfox.version>3.0.0</io.springfox.version>
+		<io.springfox.version>2.9.2</io.springfox.version>
 	</properties>
 	<dependencies>
 		<dependency>

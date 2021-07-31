@@ -11,6 +11,7 @@ public enum StringLiterals {
     ACCOUNT_DELETED("Account deleted successfully"),
     ACCOUNT_FOUND("Account found, processing further..."),
     SUCCESS_WITHDRAW("Withdrawal completed successfully"),
+    BALANCE_CHECK("Checking balance"),
     BALANCE_RETRIEVED("Balance retrieved successfully");
 
     private String message;

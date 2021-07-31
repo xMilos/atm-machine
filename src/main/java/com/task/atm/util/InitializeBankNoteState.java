@@ -15,15 +15,16 @@ import java.util.Map;
 @Component
 public final class InitializeBankNoteState {
 
-    private InitializeBankNoteState(){}
+    private InitializeBankNoteState() {
+    }
 
-    public static Map<Integer,Integer> banknoteState = new HashMap<>();
+    public static Map<Integer, Integer> banknoteState = new HashMap<>();
 
     static {
-        banknoteState.put(50,10);
-        banknoteState.put(20,30);
-        banknoteState.put(10,30);
-        banknoteState.put(5,20);
-        banknoteState.put(0,1500);
+        banknoteState.put(50, 10);
+        banknoteState.put(20, 30);
+        banknoteState.put(10, 30);
+        banknoteState.put(5, 20);
+        banknoteState.put(0, 1500);
     }
 }

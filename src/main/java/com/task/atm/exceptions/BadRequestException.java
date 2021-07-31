@@ -3,7 +3,7 @@ package com.task.atm.exceptions;
 import lombok.Getter;
 
 @Getter
-public class BadRequestException extends RuntimeException{
+public class BadRequestException extends RuntimeException {
 
     private String errorMessage;
     private String errorCode;

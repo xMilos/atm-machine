@@ -62,20 +62,20 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Transactional
-    private Account updateAccountWithNewBalance(Account account, int balanceAfterWithdraw){
+    private Account updateAccountWithNewBalance(Account account, int balanceAfterWithdraw) {
         // openbalance 800 - draft 200 - amount 950 = 100-950 = 50 -200 = -150
-        account.setBalance(balanceAfterWithdraw- account.getOverdraft());
+        account.setBalance(balanceAfterWithdraw - account.getOverdraft());
         account = accountRepository.save(account);
         updateAtm(); // give money after transaction
         return account;
     }
 
     private void updateAtm() {
-        banknoteState.put(50, banknoteState.get(50)- banknotesToGive.get(50));
-        banknoteState.put(20, banknoteState.get(20)- banknotesToGive.get(20));
-        banknoteState.put(10, banknoteState.get(10)- banknotesToGive.get(10));
-        banknoteState.put(5, banknoteState.get(5)- banknotesToGive.get(5));
-        banknoteState.put(0, banknoteState.get(0)- banknotesToGive.get(0));
+        banknoteState.put(50, banknoteState.get(50) - banknotesToGive.get(50));
+        banknoteState.put(20, banknoteState.get(20) - banknotesToGive.get(20));
+        banknoteState.put(10, banknoteState.get(10) - banknotesToGive.get(10));
+        banknoteState.put(5, banknoteState.get(5) - banknotesToGive.get(5));
+        banknoteState.put(0, banknoteState.get(0) - banknotesToGive.get(0));
     }
 
     @Override

@@ -11,8 +11,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     // todo implement security
     @Override
-    protected void configure(HttpSecurity security) throws Exception
-    {
+    protected void configure(HttpSecurity security) throws Exception {
         security.httpBasic()
                 .disable()
                 .csrf()
@@ -20,5 +19,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/**")
                 .permitAll();
+        security.headers()
+                .frameOptions()
+                .disable();
     }
 }
