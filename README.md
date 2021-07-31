@@ -32,3 +32,13 @@ All h2 and server configuration is inside [application.yml](./src/main//resource
 ### Endpoints
 
 All endpoints available on swagger http://localhost:8088/swagger-ui.html# (change server port if not default)
+
+### Testing 
+
+All test located in test package.
+Additional postman collection with request can be found in resources folder [atm-postman](./src/main/resources/atm.postman_collection.json)
+
+### NOTICE
+
+All code tested on localhost with port 8088, on docker ip address and port can be set with port binding
+on docker tested on 0.0.0.0:43125

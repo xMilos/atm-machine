@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "bd5d0049-d72f-49a6-9a10-2e3a8fbf02f2",
+		"name": "atm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "atm insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fifty",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "twenty",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "ten",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "five",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8088/api/v1/atm/insert",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"atm",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atm status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/api/v1/atm/status",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"atm",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "balance user 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "accountNumber",
+							"value": "987654321",
+							"type": "text"
+						},
+						{
+							"key": "pin",
+							"value": "4321",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8088/api/v1/account/balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 123",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"123\",\r\n    \"pin\": 123,\r\n    \"balance\": 5000,\r\n    \"overdraft\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/api/v1/account/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "balance custom user 123",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "accountNumber",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "pin",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8088/api/v1/account/balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdraw 987654321",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "accountNumber",
+							"value": "987654321",
+							"type": "text"
+						},
+						{
+							"key": "pin",
+							"value": "4321",
+							"type": "text"
+						},
+						{
+							"key": "withDrawAmount",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8088/api/v1/account/withdraw",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdaw user 123456789",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "accountNumber",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "pin",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "withDrawAmount",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8088/api/v1/account/withdraw",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/api/v1/account/delete/123",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"delete",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
