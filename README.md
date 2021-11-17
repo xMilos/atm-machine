@@ -40,5 +40,4 @@ Additional postman collection with request can be found in resources folder [atm
 
 ### NOTICE
 
-All code tested on localhost with port 8088, on docker ip address and port can be set with port binding
-on docker tested on 0.0.0.0:43125
+All code tested on localhost with port 8088
